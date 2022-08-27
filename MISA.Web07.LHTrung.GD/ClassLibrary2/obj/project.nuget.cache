@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "AP2y6T2Ame5oWdwIemMXtrK72r7JgOxI28b5+pSNGs0zNWmnzVydTfcJWhZ1r9sWvOp8vMra7pZvDhuIdQckZA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.Web07.LHTrung.GD\\ClassLibrary2\\MISA.Web07.LHTrung.GD.BL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Le Trung\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\Le Trung\\.nuget\\packages\\mysqlconnector\\2.1.12\\mysqlconnector.2.1.12.nupkg.sha512"
+  ],
+  "logs": []
+}

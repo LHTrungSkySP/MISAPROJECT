@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\MISA.Web07.LHTrung.GD.Common.csproj" />
+    <ProjectReference Include="..\ClassLibrary3\MISA.Web07.LHTrung.GD.DL.csproj" />
+  </ItemGroup>
+
+</Project>
