@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "9MbSa/FGS99XM4oDS4Qp6MAni6YKn/y3uElUwdRRb48a6UGqq7h26HcczFbXnwdVcL0masolJIwy75KzRPTvDQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.WEB07.LHTRUNG.GD.v2\\MISA.Web07.LHTrung.GD.BAL\\MISA.WEB07.LHTRUNG.GD.BUS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Le Trung\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\Le Trung\\.nuget\\packages\\mysqlconnector\\2.1.13\\mysqlconnector.2.1.13.nupkg.sha512"
+  ],
+  "logs": []
+}

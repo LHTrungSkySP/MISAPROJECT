@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FN45UH4/0Z4pLyEuCU4iKJFj8CsIBw6pdjnAAMqv7vyri3AIFsJB1uexliqtaH7L22KJcMrX68EXkkZYehWyQw==",
+  "dgSpecHash": "DrjQdHCoXSzsc/ciRv3bc3y/dnFkJhigXEiwQ148CmaxGj8KVBkmHO1MPt7Yj/dcI53VjIBh3R4abf5/0KNpvA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.Web07.LHTrung.GD\\MISA.Web07.LHTrung.GD.API02\\MISA.Web07.LHTrung.GD.API.csproj",
+  "projectFilePath": "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.Web07.LHTrung.GD\\MISA.Web07.LHTrung.GD.API02\\MISA.Web07.LHTrung.GD.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Le Trung\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Le Trung\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "MISA.WEB07.LHTRUNG.GD.DTO/1.0.0": {
+        "runtime": {
+          "MISA.WEB07.LHTRUNG.GD.DTO.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MISA.WEB07.LHTRUNG.GD.DTO/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

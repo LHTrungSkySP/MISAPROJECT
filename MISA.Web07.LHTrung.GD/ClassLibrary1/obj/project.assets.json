@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.Web07.LHTrung.GD\\ClassLibrary1\\MISA.Web07.LHTrung.GD.Common.csproj",
-      "projectName": "MISA.Web07.LHTrung.GD.Common",
-      "projectPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.Web07.LHTrung.GD\\ClassLibrary1\\MISA.Web07.LHTrung.GD.Common.csproj",
+      "projectUniqueName": "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.Web07.LHTrung.GD\\ClassLibrary1\\MISA.Web07.LHTrung.GD.DTO.csproj",
+      "projectName": "MISA.Web07.LHTrung.GD.DTO",
+      "projectPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.Web07.LHTrung.GD\\ClassLibrary1\\MISA.Web07.LHTrung.GD.DTO.csproj",
       "packagesPath": "C:\\Users\\Le Trung\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.Web07.LHTrung.GD\\ClassLibrary1\\obj\\",
+      "outputPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.Web07.LHTrung.GD\\ClassLibrary1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Le Trung\\AppData\\Roaming\\NuGet\\NuGet.Config",

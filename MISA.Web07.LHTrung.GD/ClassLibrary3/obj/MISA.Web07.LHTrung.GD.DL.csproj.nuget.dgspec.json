@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.Web07.LHTrung.GD\\ClassLibrary3\\MISA.Web07.LHTrung.GD.DL.csproj": {}
+    "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.Web07.LHTrung.GD\\ClassLibrary3\\MISA.Web07.LHTrung.GD.DL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.Web07.LHTrung.GD\\ClassLibrary1\\MISA.Web07.LHTrung.GD.Common.csproj": {
+    "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.Web07.LHTrung.GD\\ClassLibrary1\\MISA.Web07.LHTrung.GD.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.Web07.LHTrung.GD\\ClassLibrary1\\MISA.Web07.LHTrung.GD.Common.csproj",
-        "projectName": "MISA.Web07.LHTrung.GD.Common",
-        "projectPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.Web07.LHTrung.GD\\ClassLibrary1\\MISA.Web07.LHTrung.GD.Common.csproj",
+        "projectUniqueName": "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.Web07.LHTrung.GD\\ClassLibrary1\\MISA.Web07.LHTrung.GD.DTO.csproj",
+        "projectName": "MISA.Web07.LHTrung.GD.DTO",
+        "projectPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.Web07.LHTrung.GD\\ClassLibrary1\\MISA.Web07.LHTrung.GD.DTO.csproj",
         "packagesPath": "C:\\Users\\Le Trung\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.Web07.LHTrung.GD\\ClassLibrary1\\obj\\",
+        "outputPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.Web07.LHTrung.GD\\ClassLibrary1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Le Trung\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,14 +59,14 @@
         }
       }
     },
-    "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.Web07.LHTrung.GD\\ClassLibrary3\\MISA.Web07.LHTrung.GD.DL.csproj": {
+    "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.Web07.LHTrung.GD\\ClassLibrary3\\MISA.Web07.LHTrung.GD.DL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.Web07.LHTrung.GD\\ClassLibrary3\\MISA.Web07.LHTrung.GD.DL.csproj",
+        "projectUniqueName": "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.Web07.LHTrung.GD\\ClassLibrary3\\MISA.Web07.LHTrung.GD.DL.csproj",
         "projectName": "MISA.Web07.LHTrung.GD.DL",
-        "projectPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.Web07.LHTrung.GD\\ClassLibrary3\\MISA.Web07.LHTrung.GD.DL.csproj",
+        "projectPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.Web07.LHTrung.GD\\ClassLibrary3\\MISA.Web07.LHTrung.GD.DL.csproj",
         "packagesPath": "C:\\Users\\Le Trung\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.Web07.LHTrung.GD\\ClassLibrary3\\obj\\",
+        "outputPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.Web07.LHTrung.GD\\ClassLibrary3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Le Trung\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,8 +83,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.Web07.LHTrung.GD\\ClassLibrary1\\MISA.Web07.LHTrung.GD.Common.csproj": {
-                "projectPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.Web07.LHTrung.GD\\ClassLibrary1\\MISA.Web07.LHTrung.GD.Common.csproj"
+              "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.Web07.LHTrung.GD\\ClassLibrary1\\MISA.Web07.LHTrung.GD.DTO.csproj": {
+                "projectPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.Web07.LHTrung.GD\\ClassLibrary1\\MISA.Web07.LHTrung.GD.DTO.csproj"
               }
             }
           }

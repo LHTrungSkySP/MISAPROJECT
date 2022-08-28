@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="MySqlConnector" Version="2.1.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="StorageRoomDAL\" />
+    <Folder Include="SubjectDAL\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MISA.Web07.LHTrung.GD.DTO\MISA.WEB07.LHTRUNG.GD.DTO.csproj" />
+  </ItemGroup>
+
+</Project>
