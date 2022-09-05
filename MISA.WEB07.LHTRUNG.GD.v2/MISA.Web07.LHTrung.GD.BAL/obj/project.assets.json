@@ -126,11 +126,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.WEB07.LHTRUNG.GD.v2\\MISA.Web07.LHTrung.GD.BAL\\MISA.WEB07.LHTRUNG.GD.BUS.csproj",
+      "projectUniqueName": "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.WEB07.LHTRUNG.GD.v2\\MISA.Web07.LHTrung.GD.BAL\\MISA.WEB07.LHTRUNG.GD.BUS.csproj",
       "projectName": "MISA.WEB07.LHTRUNG.GD.BUS",
-      "projectPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.WEB07.LHTRUNG.GD.v2\\MISA.Web07.LHTrung.GD.BAL\\MISA.WEB07.LHTRUNG.GD.BUS.csproj",
+      "projectPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.WEB07.LHTRUNG.GD.v2\\MISA.Web07.LHTrung.GD.BAL\\MISA.WEB07.LHTRUNG.GD.BUS.csproj",
       "packagesPath": "C:\\Users\\Le Trung\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.WEB07.LHTRUNG.GD.v2\\MISA.Web07.LHTrung.GD.BAL\\obj\\",
+      "outputPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.WEB07.LHTRUNG.GD.v2\\MISA.Web07.LHTrung.GD.BAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Le Trung\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -147,11 +147,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.WEB07.LHTRUNG.GD.v2\\MISA.Web07.LHTrung.GD.DAL\\MISA.WEB07.LHTRUNG.GD.DAL.csproj": {
-              "projectPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.WEB07.LHTRUNG.GD.v2\\MISA.Web07.LHTrung.GD.DAL\\MISA.WEB07.LHTRUNG.GD.DAL.csproj"
+            "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.WEB07.LHTRUNG.GD.v2\\MISA.Web07.LHTrung.GD.DAL\\MISA.WEB07.LHTRUNG.GD.DAL.csproj": {
+              "projectPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.WEB07.LHTRUNG.GD.v2\\MISA.Web07.LHTrung.GD.DAL\\MISA.WEB07.LHTRUNG.GD.DAL.csproj"
             },
-            "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.WEB07.LHTRUNG.GD.v2\\MISA.Web07.LHTrung.GD.DTO\\MISA.WEB07.LHTRUNG.GD.DTO.csproj": {
-              "projectPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\backend\\C_sharp\\MISA.WEB07.LHTRUNG.GD.v2\\MISA.Web07.LHTrung.GD.DTO\\MISA.WEB07.LHTRUNG.GD.DTO.csproj"
+            "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.WEB07.LHTRUNG.GD.v2\\MISA.Web07.LHTrung.GD.DTO\\MISA.WEB07.LHTRUNG.GD.DTO.csproj": {
+              "projectPath": "C:\\Users\\Le Trung\\Desktop\\project_final\\MISAPROJECT\\MISA.WEB07.LHTRUNG.GD.v2\\MISA.Web07.LHTrung.GD.DTO\\MISA.WEB07.LHTRUNG.GD.DTO.csproj"
             }
           }
         }

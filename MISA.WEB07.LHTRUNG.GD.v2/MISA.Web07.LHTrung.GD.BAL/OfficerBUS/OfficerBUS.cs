@@ -1,5 +1,6 @@
-﻿using MISA.WEB07.LHTRUNG.GD.DAL;
+﻿using MISA.WEB07.LHTRUNG.GD.DAL.OfficerDAL;
 using MISA.WEB07.LHTRUNG.GD.DTO;
+using MISA.WEB07.LHTRUNG.GD.DTO.EntityUtilities;
 
 namespace MISA.WEB07.LHTRUNG.GD.BUS
 {
@@ -17,7 +18,34 @@ namespace MISA.WEB07.LHTRUNG.GD.BUS
         #endregion
 
         #region Method
+        public PagingData FilterOfficer(string? keyword, Guid? subjectID, Guid? groupID, Guid? storageRoomID, string sortBy = "ModifiedDate DESC", int pageSize = 10, int pageNumber = 1)
+        {
+            return _officerDAL.FilterOfficer(keyword, subjectID, groupID, storageRoomID, sortBy, pageSize, pageNumber);
+        }
 
+        public OfficerDetail GetOfficerDetail(Guid officerID)
+        {
+            return _officerDAL.GetOfficerDetail(officerID);
+        }
+
+        public OfficerDetailPaging GetOfficersDetail(string? keyword, Guid? subjectID, Guid? groupID, Guid? storageRoomID, string sortBy = "ModifiedDate DESC", int pageSize = 10, int pageNumber = 1)
+        {
+            return _officerDAL.GetOfficersDetail(keyword, subjectID, groupID, storageRoomID, sortBy, pageSize, pageNumber);
+        }
+
+
+
+        /// <summary>
+        /// API thêm mới thông tin chi tiết vê OfficerID
+        /// </summary>
+        /// <param name="officerDetail" chứa thông tin cần thêm mới 
+        /// <returns>id nhân viên đc chèn</returns>
+        /// Created by: LHTrung
+        /// 
+        public Guid InsertDetailOfficer(OfficerDetail officerDetail)
+        {
+            return _officerDAL.InsertDetailOfficer(officerDetail);
+        }
         #endregion
     }
 }

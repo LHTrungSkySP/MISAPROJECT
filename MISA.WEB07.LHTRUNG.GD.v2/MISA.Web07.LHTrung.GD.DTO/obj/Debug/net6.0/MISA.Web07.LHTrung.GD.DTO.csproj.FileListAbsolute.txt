@@ -10,3 +10,15 @@ C:\Users\Le Trung\Desktop\project_final\backend\C_sharp\MISA.WEB07.LHTRUNG.GD.v2
 C:\Users\Le Trung\Desktop\project_final\backend\C_sharp\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\obj\Debug\net6.0\refint\MISA.Web07.LHTrung.GD.DTO.dll
 C:\Users\Le Trung\Desktop\project_final\backend\C_sharp\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\obj\Debug\net6.0\MISA.Web07.LHTrung.GD.DTO.pdb
 C:\Users\Le Trung\Desktop\project_final\backend\C_sharp\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\obj\Debug\net6.0\ref\MISA.Web07.LHTrung.GD.DTO.dll
+C:\Users\Le Trung\Desktop\project_final\MISAPROJECT\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\bin\Debug\net6.0\MISA.WEB07.LHTRUNG.GD.DTO.deps.json
+C:\Users\Le Trung\Desktop\project_final\MISAPROJECT\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\bin\Debug\net6.0\MISA.WEB07.LHTRUNG.GD.DTO.dll
+C:\Users\Le Trung\Desktop\project_final\MISAPROJECT\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\bin\Debug\net6.0\MISA.WEB07.LHTRUNG.GD.DTO.pdb
+C:\Users\Le Trung\Desktop\project_final\MISAPROJECT\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\obj\Debug\net6.0\MISA.WEB07.LHTRUNG.GD.DTO.csproj.AssemblyReference.cache
+C:\Users\Le Trung\Desktop\project_final\MISAPROJECT\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\obj\Debug\net6.0\MISA.WEB07.LHTRUNG.GD.DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Le Trung\Desktop\project_final\MISAPROJECT\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\obj\Debug\net6.0\MISA.WEB07.LHTRUNG.GD.DTO.AssemblyInfoInputs.cache
+C:\Users\Le Trung\Desktop\project_final\MISAPROJECT\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\obj\Debug\net6.0\MISA.WEB07.LHTRUNG.GD.DTO.AssemblyInfo.cs
+C:\Users\Le Trung\Desktop\project_final\MISAPROJECT\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\obj\Debug\net6.0\MISA.WEB07.LHTRUNG.GD.DTO.csproj.CoreCompileInputs.cache
+C:\Users\Le Trung\Desktop\project_final\MISAPROJECT\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\obj\Debug\net6.0\MISA.WEB07.LHTRUNG.GD.DTO.dll
+C:\Users\Le Trung\Desktop\project_final\MISAPROJECT\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\obj\Debug\net6.0\refint\MISA.WEB07.LHTRUNG.GD.DTO.dll
+C:\Users\Le Trung\Desktop\project_final\MISAPROJECT\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\obj\Debug\net6.0\MISA.WEB07.LHTRUNG.GD.DTO.pdb
+C:\Users\Le Trung\Desktop\project_final\MISAPROJECT\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\obj\Debug\net6.0\ref\MISA.WEB07.LHTRUNG.GD.DTO.dll

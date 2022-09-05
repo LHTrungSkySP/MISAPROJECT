@@ -11,10 +11,4 @@
     <ProjectReference Include="..\MISA.Web07.LHTrung.GD.DTO\MISA.WEB07.LHTRUNG.GD.DTO.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="GroupBUS\" />
-    <Folder Include="StorageRoomBUS\" />
-    <Folder Include="SubjectBUS\" />
-  </ItemGroup>
-
 </Project>

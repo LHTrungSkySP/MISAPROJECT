@@ -9,7 +9,7 @@ namespace MISA.WEB07.LHTRUNG.GD.DTO
     {
         // ID nhân viên
         [Key]
-        public Guid OfficerID { get; set; } = Guid.NewGuid();
+        public Guid? OfficerID { get; set; } = Guid.NewGuid();
 
         // mã nhân viên
         [Required(ErrorMessage = "e001")]
@@ -17,7 +17,7 @@ namespace MISA.WEB07.LHTRUNG.GD.DTO
 
         // tên nhân viên
         [Required(ErrorMessage = "e002")]
-        public string? FullName { get; set; }
+        public string? OfficerName { get; set; }
 
         // ngày sinh
         public DateTime DateOfBirth { get; set; }
@@ -47,11 +47,6 @@ namespace MISA.WEB07.LHTRUNG.GD.DTO
         // tên tổ chuyên môn
         public string? GroupName { get; set; }
 
-        // id môn
-        public Guid? SubjectID { get; set; }
-
-        // tên môn
-        public string? SubjectName { get; set; }
 
         // có trình độ quản lý thiết bị ?
         public EMT? EMT { get; set; }
@@ -61,12 +56,6 @@ namespace MISA.WEB07.LHTRUNG.GD.DTO
 
         // ngày nghỉ việc
         public DateTime? QuitDate { get; set; }
-
-        // id phòng kho quản lý
-        public Guid? StorageRoomID { get; set; }
-
-        // tên phòng kho quản lý
-        public string? StorageRoomName { get; set; }
 
         // ngày tạo 
         public DateTime? CreatedDate { get; set; }
@@ -81,9 +70,9 @@ namespace MISA.WEB07.LHTRUNG.GD.DTO
         public string? ModifiedBy { get; set; }
 
 
-        // khóa ngoại tới Tổ (Group)
-        [ForeignKey("GroupID")]
-        public Group? Group { get; set; }
+        //// khóa ngoại tới Tổ (Group)  
+        //[ForeignKey("GroupID")]
+        //public Group? Group { get; set; }
 
     }
 }

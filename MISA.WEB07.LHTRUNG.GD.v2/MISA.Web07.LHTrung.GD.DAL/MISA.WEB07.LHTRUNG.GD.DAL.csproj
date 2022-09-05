@@ -12,11 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="StorageRoomDAL\" />
-    <Folder Include="SubjectDAL\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MISA.Web07.LHTrung.GD.DTO\MISA.WEB07.LHTRUNG.GD.DTO.csproj" />
   </ItemGroup>
 

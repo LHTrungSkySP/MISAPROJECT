@@ -1,4 +1,5 @@
-﻿using MISA.WEB07.LHTRUNG.GD.DAL;
+﻿using MISA.WEB07.LHTRUNG.GD.DAL.BaseDAL;
+using System.Text.RegularExpressions;
 
 namespace MISA.WEB07.LHTRUNG.GD.BUS
 {
@@ -7,7 +8,6 @@ namespace MISA.WEB07.LHTRUNG.GD.BUS
         #region Feild
 
         private IBaseDAL<T> _baseDAL;
-        //private IOfficerDAL _officerDAL;
 
         #endregion
 
@@ -16,6 +16,11 @@ namespace MISA.WEB07.LHTRUNG.GD.BUS
         public BaseBUS(IBaseDAL<T> baseDAL)
         {
             _baseDAL = baseDAL;
+        }
+
+        public Guid DeleteOneRecord(Guid recordID)
+        {
+            return _baseDAL.DeleteOneRecord(recordID);
         }
 
 
@@ -28,10 +33,41 @@ namespace MISA.WEB07.LHTRUNG.GD.BUS
         /// </summary>
         /// <returns>Tất cả bản ghi của một bảng</returns>
         /// Created by:  LHTrung
-
         public IEnumerable<dynamic> GetAllRecords()
         {
             return _baseDAL.GetAllRecords();
+        }
+
+        /// <summary>
+        /// Thêm mới một bản ghi
+        /// </summary>
+        /// <param name="record">Đối tượng bản ghi cần thêm mới</param>
+        /// <returns>Số bản ghi bị ảnh hưởng (Thêm mới thành công thì sẽ trả về 1 bản ghi bị ảnh hưởng)</returns>
+        /// Created by: TMSANG (24/08/2022)
+        public Guid InsertOneRecord(T record)
+        {
+            return _baseDAL.InsertOneRecord(record);
+        }
+
+        public int UpdateOneRecord(T record)
+        {
+            return _baseDAL.UpdateOneRecord(record);
+        }
+
+        public string GetNewCode()
+        {
+            string newCode = _baseDAL.GetNewCode();
+            // Create a Regex  
+            Regex rexCodeNumber = new Regex(@"[0-9]\w+");
+            Regex rexStrNumber = new Regex(@"[A-Z]\w");
+
+            // Get all matches  
+            Match matchedNumber = rexCodeNumber.Match(newCode);
+            Match matchedStr = rexStrNumber.Match(newCode);
+
+            string kq = matchedStr.Value + (int.Parse(matchedNumber.Value) + 1);
+
+            return kq;
         }
         #endregion
 

@@ -1,11 +1,11 @@
 ﻿namespace MISA.WEB07.LHTRUNG.GD.DTO.EntityUtilities
 {
-    public class PagingData<T>
+    public class PagingData
     {
         /// <summary>
         /// Mảng đối tượng thỏa mãn điều kiện lọc và phân trang 
         /// </summary>
-        public List<T> Data { get; set; } = new List<T>();
+        public List<Guid> Data { get; set; } = new List<Guid>();
 
         /// <summary>
         /// Tổng số bản ghi thỏa mãn điều kiện
