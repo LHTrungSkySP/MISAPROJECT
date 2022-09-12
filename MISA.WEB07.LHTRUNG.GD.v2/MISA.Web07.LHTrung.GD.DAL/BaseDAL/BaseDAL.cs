@@ -34,7 +34,7 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.BaseDAL
         /// <param name="record">Đối tượng bản ghi cần thêm mới</param>
         /// <returns>Số bản ghi bị ảnh hưởng (Thêm mới thành công thì sẽ trả về 1 bản ghi bị ảnh hưởng)</returns>
         /// Created by: LHTrung
-        public virtual Guid InsertOneRecord(T record)
+        public virtual Guid? InsertOneRecord(T record)
         {
             //return Guid.NewGuid();
             //lấy kiểu dữ liệu của T ( tên bảng )
@@ -56,8 +56,16 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.BaseDAL
             // Thực hiện gọi vào DB để chạy câu lệnh Stored procedure
             using (var mySqlConnection = new MySqlConnection(DatabaseContext.ContextString))
             {
-                var id = mySqlConnection.Query<Guid>(storedProcedureName, parameters, commandType: System.Data.CommandType.StoredProcedure);
-                return id.FirstOrDefault();
+                try
+                {
+                    var id = mySqlConnection.Query<Guid>(storedProcedureName, parameters, commandType: System.Data.CommandType.StoredProcedure);
+                    return id.FirstOrDefault();
+
+                }
+                catch
+                {
+                    return null;
+                }
             }
 
         }
@@ -101,6 +109,7 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.BaseDAL
                 }
             }
         }
+
 
         /// <summary>
         /// xóa một bản ghi

@@ -20,10 +20,10 @@ namespace MISA.WEB07.LHTRUNG.GD.DTO
         public string? OfficerName { get; set; }
 
         // ngày sinh
-        public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
 
         // giới tính
-        public Gender Gender { get; set; }
+        public Gender? Gender { get; set; }
 
         // số chúng minh
         public string? IdentityNumber { get; set; }
@@ -35,7 +35,6 @@ namespace MISA.WEB07.LHTRUNG.GD.DTO
         public string? GrantedPlace { get; set; }
 
         // email
-        [EmailAddress(ErrorMessage = "e009")]
         public string? Email { get; set; }
 
         // số điện thoại

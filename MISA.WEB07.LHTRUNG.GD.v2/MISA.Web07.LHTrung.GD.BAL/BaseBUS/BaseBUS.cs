@@ -18,7 +18,7 @@ namespace MISA.WEB07.LHTRUNG.GD.BUS
             _baseDAL = baseDAL;
         }
 
-        public Guid DeleteOneRecord(Guid recordID)
+        public Guid? DeleteOneRecord(Guid recordID)
         {
             return _baseDAL.DeleteOneRecord(recordID);
         }
@@ -44,12 +44,12 @@ namespace MISA.WEB07.LHTRUNG.GD.BUS
         /// <param name="record">Đối tượng bản ghi cần thêm mới</param>
         /// <returns>Số bản ghi bị ảnh hưởng (Thêm mới thành công thì sẽ trả về 1 bản ghi bị ảnh hưởng)</returns>
         /// Created by: TMSANG (24/08/2022)
-        public Guid InsertOneRecord(T record)
+        public Guid? InsertOneRecord(T record)
         {
             return _baseDAL.InsertOneRecord(record);
         }
 
-        public int UpdateOneRecord(T record)
+        public int? UpdateOneRecord(T record)
         {
             return _baseDAL.UpdateOneRecord(record);
         }

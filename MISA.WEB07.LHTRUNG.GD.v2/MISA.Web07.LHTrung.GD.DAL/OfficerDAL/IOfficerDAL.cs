@@ -18,7 +18,7 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.OfficerDAL
         /// + Danh sách nhân viên thỏa mãn điều kiện lọc và phân trang
         /// + Tổng số nhân viên thỏa mãn điều kiện</returns>
         /// Created by: LHTrung
-        public PagingData FilterOfficer(
+        public PagingData? FilterOfficer(
             string? keyword,
             Guid? subjectID,
             Guid? groupID,
@@ -31,7 +31,8 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.OfficerDAL
         /// lấy thông tin chi tiết cảu toàn bộ officer 
         ///</summary>
         ///
-        public OfficerDetailPaging GetOfficersDetail(string? keyword,
+        public OfficerDetailPaging? GetOfficersDetail(
+            string? keyword,
             Guid? subjectID,
             Guid? groupID,
             Guid? storageRoomID,
@@ -48,7 +49,7 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.OfficerDAL
         /// + Danh sách kho phòng nhân viên đó quản lý</returns>
         /// Created by: LHTrung
         /// 
-        public OfficerDetail GetOfficerDetail(Guid officerID);
+        public OfficerDetail? GetOfficerDetail(Guid officerID);
 
         /// <summary>
         /// API thêm mới thông tin chi tiết vê OfficerID
@@ -57,6 +58,15 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.OfficerDAL
         /// <returns>id của thằng đc chèn</returns>
         /// Created by: LHTrung
         /// 
-        public Guid InsertDetailOfficer(OfficerDetail officerDetail);
+        public Guid? InsertDetailOfficer(OfficerDetail officerDetail);
+
+
+        /// <summary>
+        /// Sửa một bản ghi
+        /// </summary>
+        /// <param name="record">Đối tượng bản ghi cần sửa</param>
+        /// <returns>Số bản ghi bị ảnh hưởng (Sửa thành công thì sẽ trả về 1 bản ghi bị ảnh hưởng)</returns>
+        /// Created by: LHTrung
+        public Guid? UpdateOfficerDetail(OfficerDetail officerDetail);
     }
 }

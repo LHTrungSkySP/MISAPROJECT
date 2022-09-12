@@ -26,6 +26,16 @@ namespace MISA.WEB07.LHTRUNG.GD.BUS.Manager.BaseManager
         {
             return _baseManagerDAL.GetAllRecords(id);
         }
+
+        public Guid InsertOneRecord(T officerDetail)
+        {
+            return _baseManagerDAL.InsertOneRecord(officerDetail);
+        }
+
+        public int Reset(Guid officerID)
+        {
+            return _baseManagerDAL.Reset(officerID);
+        }
         #endregion
     }
 

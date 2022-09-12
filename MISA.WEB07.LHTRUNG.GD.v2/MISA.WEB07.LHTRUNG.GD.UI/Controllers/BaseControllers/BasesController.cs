@@ -69,7 +69,7 @@ namespace MISA.WEB07.LHTRUNG.GD.UI.Controllers
             }
             catch (MySqlException mySqlException)
             {
-                return StatusCode(StatusCodes.Status400BadRequest, mySqlException.Message);
+                return StatusCode(StatusCodes.Status207MultiStatus, mySqlException.Message);
             }
             catch (Exception ex)
             {
@@ -102,7 +102,19 @@ namespace MISA.WEB07.LHTRUNG.GD.UI.Controllers
                 return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
             }
         }
-
+        [HttpPut]
+        public virtual IActionResult UpdateOneRecord([FromBody] T record)
+        {
+            try
+            {
+                return StatusCode(StatusCodes.Status200OK, _baseBUS.UpdateOneRecord(record));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
+            }
+        }
         [HttpGet("NewCode")]
         public virtual IActionResult GetNewCode()
         {

@@ -15,7 +15,7 @@
         /// <param name="record">Đối tượng bản ghi cần thêm mới</param>
         /// <returns>Số bản ghi bị ảnh hưởng (Thêm mới thành công thì sẽ trả về 1 bản ghi bị ảnh hưởng)</returns>
         /// Created by: LHTrung
-        public Guid InsertOneRecord(T record);
+        public Guid? InsertOneRecord(T record);
 
         /// <summary>
         /// sửa 1 bản ghi

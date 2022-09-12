@@ -15,7 +15,7 @@
         /// <param name="record">Đối tượng bản ghi cần thêm mới</param>
         /// <returns>Số bản ghi bị ảnh hưởng (Thêm mới thành công thì sẽ trả về 1 bản ghi bị ảnh hưởng)</returns>
         /// Created by: LHTrung
-        public Guid InsertOneRecord(T record);
+        public Guid? InsertOneRecord(T record);
 
         /// <summary>
         /// sửa 1 bản ghi
@@ -24,7 +24,7 @@
         /// <param name="recordID">ID Đối tượng bản ghi cần sửa</param>
         /// <returns>Số bản ghi bị ảnh hưởng (sửa thành công thì sẽ trả về 1 bản ghi bị ảnh hưởng)</returns>
         /// Created by:  LHTRUNG
-        public int UpdateOneRecord(T record);
+        public int? UpdateOneRecord(T record);
 
         /// <summary>
         /// xóa 1 bản ghi
@@ -32,7 +32,7 @@
         /// <param name="recordID">ID Đối tượng bản ghi cần xóa</param>
         /// <returns>Số bản ghi bị ảnh hưởng (xóa thành công thì sẽ trả về 1 bản ghi bị ảnh hưởng)</returns>
         /// Created by:  LHTRUNG
-        public Guid DeleteOneRecord(Guid recordID);
+        public Guid? DeleteOneRecord(Guid recordID);
 
         /// <summary>
         /// lấy mã số mới

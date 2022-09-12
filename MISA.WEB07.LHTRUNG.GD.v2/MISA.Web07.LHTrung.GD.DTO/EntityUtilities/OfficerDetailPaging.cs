@@ -3,6 +3,6 @@
     public class OfficerDetailPaging
     {
         public List<OfficerDetail> listOfficerDetail { get; set; } = new List<OfficerDetail>();
-        public long Total;
+        public long Total { get; set; }
     }
 }
