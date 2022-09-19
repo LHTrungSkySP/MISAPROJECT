@@ -12,14 +12,13 @@ namespace MISA.WEB07.LHTRUNG.GD.DTO
         public Guid? OfficerID { get; set; } = Guid.NewGuid();
 
         // mã nhân viên
-        [Required(ErrorMessage = "e001")]
         public string? OfficerCode { get; set; }
 
         // tên nhân viên
-        [Required(ErrorMessage = "e002")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "e003")]
         public string? OfficerName { get; set; }
 
-        // ngày sinh
+        // ngày sin
         public DateTime? DateOfBirth { get; set; }
 
         // giới tính

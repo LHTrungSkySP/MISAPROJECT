@@ -13,15 +13,14 @@
         /// Thêm mới một bản ghi
         /// </summary>
         /// <param name="record">Đối tượng bản ghi cần thêm mới</param>
-        /// <returns>Số bản ghi bị ảnh hưởng (Thêm mới thành công thì sẽ trả về 1 bản ghi bị ảnh hưởng)</returns>
+        /// <returns>ID bản ghi được them mới (Thêm mới thành công thì sẽ trả về id nhân viên được thêm mới)</returns>
         /// Created by: LHTrung
         public Guid? InsertOneRecord(T record);
 
         /// <summary>
         /// sửa 1 bản ghi
         /// </summary>
-        /// <param name="record">Đối tượng bản ghi sẽ thay thế bản ghi cũ</param>
-        /// <param name="recordID">ID Đối tượng bản ghi cần sửa</param>
+        /// <param name="record">Đối tượng bản ghi đã cập nhật lại thông tin</param>
         /// <returns>Số bản ghi bị ảnh hưởng (sửa thành công thì sẽ trả về 1 bản ghi bị ảnh hưởng)</returns>
         /// Created by:  LHTRUNG
         public int UpdateOneRecord(T record);
@@ -30,16 +29,23 @@
         /// xóa 1 bản ghi
         /// </summary>
         /// <param name="recordID">ID Đối tượng bản ghi cần xóa</param>
-        /// <returns>Số bản ghi bị ảnh hưởng (xóa thành công thì sẽ trả về 1 bản ghi bị ảnh hưởng)</returns>
+        /// <returns>ID bản ghi bị xóa thành công</returns>
         /// Created by:  LHTRUNG
-        public Guid DeleteOneRecord(Guid recordID);
+        public int DeleteOneRecord(Guid recordID);
 
         /// <summary>
         /// lấy mã số mới
         /// </summary>
-        /// <returns>Mã số mới</returns>
+        /// <returns>Mã số mới (VD: NV003)</returns>
         /// Created by: LHTrung
         public string GetNewCode();
+
+        /// <summary>
+        /// Kiểm tra mã mới
+        /// </summary>
+        /// <returns>Mã số mới</returns>
+        /// Created by: LHTrung
+        public bool CheckDuplicateCode(string Code);
 
     }
 }

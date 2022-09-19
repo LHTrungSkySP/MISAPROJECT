@@ -11,10 +11,11 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.OfficerDAL
         /// <summary>
         /// API Lấy danh sách nhân viên cho phép lọc và phân trang
         /// </summary>
-        /// <param name="keyword">Từ khóa muốn tìm kiếm</param> 
-        /// <param name="positionID">ID vị trí</param>
-        /// <param name="departmentID">ID phòng ban</param>
-        /// <param name="pageSize">Số trang muốn lấy</param>
+        /// <param name="keyword">Từ khóa muốn tìm kiếm (mã NV, Tên NV, SĐT)</param> 
+        /// <param name="subjectID">ID môn học</param>
+        /// <param name="groupID">ID tổ bộ môn</param>
+        /// <param name="storageRoomID">ID phòng kho</param>
+        /// <param name="pageSize">Số bản ghi trong một trang</param>
         /// <param name="pageNumber">Thứ tự trang muốn lấy</param>
         /// <returns>Một đối tượng gồm:
         /// + Danh sách nhân viên thỏa mãn điều kiện lọc và phân trang
@@ -110,7 +111,6 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.OfficerDAL
             /// lấy id của các phòng do officerID quản lý
             ///</summary>
             string storedProcedureName = $"Proc_officer_GetAllDetail";
-            var tam = officerID;
 
             // tham số đầu vào cho Stored procedure
             var parameters = new DynamicParameters();
@@ -142,9 +142,14 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.OfficerDAL
         /// lấy thông tin chi tiết cảu toàn bộ officer 
         ///</summary>
         ///
-        public virtual OfficerDetailPaging GetOfficersDetail(
-            string? keyword, Guid? subjectID, Guid? groupID, Guid? storageRoomID, string sortBy = "ModifiedDate DESC", int pageSize = 10, int pageNumber = 1
-            )
+        public OfficerDetailPaging? GetOfficersDetail(
+            string? keyword,
+            Guid? subjectID,
+            Guid? groupID,
+            Guid? storageRoomID,
+            string sortBy = "ModifiedDate DESC",
+            int pageSize = 10,
+            int pageNumber = 1)
         {
             // chuẩn bị câu lệnh Procedure 
 
@@ -189,7 +194,6 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.OfficerDAL
             var id = InsertOneRecord(officerDetail.officer);
             if (id != null)
             {
-                var officer = officerDetail.officer;
                 if (officerDetail.subjects != null)
                 {
                     // gọi vào procedure trong store
@@ -271,9 +275,9 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.OfficerDAL
         /// <param name="record">Đối tượng bản ghi cần sửa</param>
         /// <returns>Số bản ghi bị ảnh hưởng (Sửa thành công thì sẽ trả về 1 bản ghi bị ảnh hưởng)</returns>
         /// Created by: LHTrung
-        public virtual Guid? UpdateOfficerDetail(OfficerDetail officerDetail)
+        public int UpdateOfficerDetail(OfficerDetail officerDetail)
         {
-            var tam = UpdateOneRecord(officerDetail.officer);
+            int rowAffected = UpdateOneRecord(officerDetail.officer);
             var id = officerDetail.officer.OfficerID;
             if (officerDetail.subjects != null)
             {
@@ -284,7 +288,7 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.OfficerDAL
                     string storedProcedureNameReset = $"Proc_subjectmanager_ResetByOfficerID";
                     var parameter = new DynamicParameters();
                     parameter.Add("@v_officerid", id);
-                    mySqlConnection.Execute(storedProcedureNameReset, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                    rowAffected += mySqlConnection.Execute(storedProcedureNameReset, parameter, commandType: System.Data.CommandType.StoredProcedure);
 
                     // chuẩn bị câu lệnh procedure thêm mới môn học được cá nhân dạy
                     string storedProcedureName = $"Proc_subjectmanager_InsertOne";
@@ -301,7 +305,7 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.OfficerDAL
                         parameters.Add($"v_modifiedby", "Admin");
 
                         // Thực hiện gọi vào DB để chạy câu lệnh Stored procedure
-                        mySqlConnection.Query(storedProcedureName, parameters, commandType: System.Data.CommandType.StoredProcedure);
+                        rowAffected += mySqlConnection.Execute(storedProcedureName, parameters, commandType: System.Data.CommandType.StoredProcedure);
                     }
                 }
             }
@@ -315,7 +319,7 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.OfficerDAL
                     string storedProcedureNameReset = $"Proc_storageroommanager_ResetByOfficerID";
                     var parameter = new DynamicParameters();
                     parameter.Add("@v_officerid", id);
-                    mySqlConnection.Execute(storedProcedureNameReset, parameter, commandType: System.Data.CommandType.StoredProcedure);
+                    rowAffected += mySqlConnection.Execute(storedProcedureNameReset, parameter, commandType: System.Data.CommandType.StoredProcedure);
 
                     // chuẩn bị câu lệnh procedure thêm mới kho phòng được cá nhân ql         
                     string storedProcedureName = $"Proc_storageroommanager_InsertOne";
@@ -333,11 +337,11 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.OfficerDAL
                         parameters.Add($"v_modifiedby", "Admin");
 
                         // Thực hiện gọi vào DB để chạy câu lệnh Stored procedure
-                        mySqlConnection.Execute(storedProcedureName, parameters, commandType: System.Data.CommandType.StoredProcedure);
+                        rowAffected += mySqlConnection.Execute(storedProcedureName, parameters, commandType: System.Data.CommandType.StoredProcedure);
                     }
                 }
             }
-            return id;
+            return rowAffected;
         }
     }
 }

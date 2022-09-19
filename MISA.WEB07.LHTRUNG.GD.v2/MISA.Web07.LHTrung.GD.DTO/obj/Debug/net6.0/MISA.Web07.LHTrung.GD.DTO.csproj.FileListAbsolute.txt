@@ -22,3 +22,5 @@ C:\Users\Le Trung\Desktop\project_final\MISAPROJECT\MISA.WEB07.LHTRUNG.GD.v2\MIS
 C:\Users\Le Trung\Desktop\project_final\MISAPROJECT\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\obj\Debug\net6.0\refint\MISA.WEB07.LHTRUNG.GD.DTO.dll
 C:\Users\Le Trung\Desktop\project_final\MISAPROJECT\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\obj\Debug\net6.0\MISA.WEB07.LHTRUNG.GD.DTO.pdb
 C:\Users\Le Trung\Desktop\project_final\MISAPROJECT\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\obj\Debug\net6.0\ref\MISA.WEB07.LHTRUNG.GD.DTO.dll
+C:\Users\Le Trung\Desktop\project_final\MISAPROJECT\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\obj\Debug\net6.0\MISA.WEB07.LHTRUNG.GD.DTO.Resources.Resource.resources
+C:\Users\Le Trung\Desktop\project_final\MISAPROJECT\MISA.WEB07.LHTRUNG.GD.v2\MISA.Web07.LHTrung.GD.DTO\obj\Debug\net6.0\MISA.WEB07.LHTRUNG.GD.DTO.csproj.GenerateResource.cache

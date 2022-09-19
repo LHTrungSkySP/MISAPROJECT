@@ -32,7 +32,7 @@
         /// <param name="recordID">ID Đối tượng bản ghi cần xóa</param>
         /// <returns>Số bản ghi bị ảnh hưởng (xóa thành công thì sẽ trả về 1 bản ghi bị ảnh hưởng)</returns>
         /// Created by:  LHTRUNG
-        public Guid? DeleteOneRecord(Guid recordID);
+        public int DeleteOneRecord(Guid recordID);
 
         /// <summary>
         /// lấy mã số mới
@@ -41,5 +41,20 @@
         /// Created by: LHTrung
 
         public string GetNewCode();
+
+        /// <summary>
+        /// Kiểm tra mã mới
+        /// </summary>
+        /// <returns>mã mới có trùng không</returns>
+        /// Created by: LHTrung
+        public bool CheckDuplicateCode(string Code);
+
+
+        ///// <summary>
+        ///// Kiểm tra dữ liệu đầu vào
+        ///// </summary>
+        ///// <returns>dữ liệu Input có đúng định dạng không</returns>
+        ///// Created by: LHTrung
+        //public ErrorResult Validate(T record);
     }
 }

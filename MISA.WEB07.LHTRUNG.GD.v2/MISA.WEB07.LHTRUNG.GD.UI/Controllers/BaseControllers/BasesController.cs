@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MISA.WEB07.LHTRUNG.GD.BUS;
+using MISA.WEB07.LHTRUNG.GD.UI.Helpers;
 using MySqlConnector;
 
 namespace MISA.WEB07.LHTRUNG.GD.UI.Controllers
@@ -24,10 +25,8 @@ namespace MISA.WEB07.LHTRUNG.GD.UI.Controllers
         /// <summary>
         /// API get 1 table
         /// </summary>
-        /// <param name="record">Đối tượng bản ghi cần thêm mới</param>
         /// <returns>toàn bộ bản ghi của 1 bảng</returns>
         /// Created by: LHTrung
-
         [HttpGet]
         public virtual IActionResult GetAllRecords()
         {
@@ -37,8 +36,7 @@ namespace MISA.WEB07.LHTRUNG.GD.UI.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
+                return StatusCode(StatusCodes.Status400BadRequest, HandleError.GenerateExceptionResult(ex, HttpContext));
             }
         }
         #endregion
@@ -51,29 +49,26 @@ namespace MISA.WEB07.LHTRUNG.GD.UI.Controllers
         /// Created by: TMSANG (24/08/2022)
         [HttpPost]
         public virtual IActionResult InsertOneRecord(
-            [FromBody] T record
-            )
+            [FromBody] T record)
         {
             try
             {
+                var validateResutl = HandleError.ValidateEntity(ModelState, HttpContext);
+                if (validateResutl != null)
+                {
+                    return StatusCode(StatusCodes.Status400BadRequest, validateResutl);
+                }
                 var recordID = _baseBUS.InsertOneRecord(record);
 
-                if (recordID != Guid.Empty)
-                {
-                    return StatusCode(StatusCodes.Status201Created, recordID);
-                }
-                else
-                {
-                    return StatusCode(StatusCodes.Status400BadRequest, "e004");
-                }
+                return StatusCode(StatusCodes.Status201Created, recordID);
             }
             catch (MySqlException mySqlException)
             {
-                return StatusCode(StatusCodes.Status207MultiStatus, mySqlException.Message);
+                return StatusCode(StatusCodes.Status400BadRequest, HandleError.GenerateDuplicateCodeErrorResult(mySqlException, HttpContext));
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
+                return StatusCode(StatusCodes.Status400BadRequest, HandleError.GenerateExceptionResult(ex, HttpContext));
             }
         }
 
@@ -83,15 +78,7 @@ namespace MISA.WEB07.LHTRUNG.GD.UI.Controllers
             try
             {
                 var recordID = _baseBUS.DeleteOneRecord(id);
-
-                if (recordID != Guid.Empty)
-                {
-                    return StatusCode(StatusCodes.Status201Created, recordID);
-                }
-                else
-                {
-                    return StatusCode(StatusCodes.Status400BadRequest, "ngu");
-                }
+                return StatusCode(StatusCodes.Status201Created, recordID);
             }
             catch (MySqlException mySqlException)
             {
@@ -99,7 +86,7 @@ namespace MISA.WEB07.LHTRUNG.GD.UI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
+                return StatusCode(StatusCodes.Status400BadRequest, HandleError.GenerateExceptionResult(ex, HttpContext));
             }
         }
         [HttpPut]
@@ -111,8 +98,7 @@ namespace MISA.WEB07.LHTRUNG.GD.UI.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
+                return StatusCode(StatusCodes.Status400BadRequest, HandleError.GenerateExceptionResult(ex, HttpContext));
             }
         }
         [HttpGet("NewCode")]
@@ -137,7 +123,34 @@ namespace MISA.WEB07.LHTRUNG.GD.UI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
+                return StatusCode(StatusCodes.Status400BadRequest, HandleError.GenerateExceptionResult(ex, HttpContext));
+            }
+        }
+
+        // tesst
+        [HttpGet("abc/{code}")]
+        public virtual IActionResult check([FromRoute] string code)
+        {
+            try
+            {
+
+
+                if (!_baseBUS.CheckDuplicateCode(code))
+                {
+                    return StatusCode(StatusCodes.Status200OK);
+                }
+                else
+                {
+                    return StatusCode(StatusCodes.Status400BadRequest, "trunfg");
+                }
+            }
+            catch (MySqlException mySqlException)
+            {
+                return StatusCode(StatusCodes.Status400BadRequest, HandleError.GenerateDuplicateCodeErrorResult(mySqlException, HttpContext));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status400BadRequest, HandleError.GenerateExceptionResult(ex, HttpContext));
             }
         }
     }

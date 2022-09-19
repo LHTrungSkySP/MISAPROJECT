@@ -15,14 +15,13 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.BaseDAL
             //lấy kiểu dữ liệu của T ( tên bảng )
             string className = typeof(T).Name;
 
-            //// chuẩn bị tên của Stored procedure cần dùng
+            // chuẩn bị tên của Stored procedure cần dùng
             string storedProcedureName = $"Proc_{className.ToLower()}_GetAll";
 
             // Thực hiện gọi vào DB để chạy câu lệnh Stored procedure
             using (var mySqlConnection = new MySqlConnection(DatabaseContext.ContextString))
             {
                 var records = mySqlConnection.Query(storedProcedureName, commandType: System.Data.CommandType.StoredProcedure);
-
                 return records;
             }
         }
@@ -32,7 +31,7 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.BaseDAL
         /// Thêm mới một bản ghi
         /// </summary>
         /// <param name="record">Đối tượng bản ghi cần thêm mới</param>
-        /// <returns>Số bản ghi bị ảnh hưởng (Thêm mới thành công thì sẽ trả về 1 bản ghi bị ảnh hưởng)</returns>
+        /// <returns>ID bản ghi được them mới (Thêm mới thành công thì sẽ trả về id nhân viên được thêm mới)</returns>
         /// Created by: LHTrung
         public virtual Guid? InsertOneRecord(T record)
         {
@@ -56,26 +55,18 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.BaseDAL
             // Thực hiện gọi vào DB để chạy câu lệnh Stored procedure
             using (var mySqlConnection = new MySqlConnection(DatabaseContext.ContextString))
             {
-                try
-                {
-                    var id = mySqlConnection.Query<Guid>(storedProcedureName, parameters, commandType: System.Data.CommandType.StoredProcedure);
-                    return id.FirstOrDefault();
-
-                }
-                catch
-                {
-                    return null;
-                }
+                var id = mySqlConnection.Query<Guid>(storedProcedureName, parameters, commandType: System.Data.CommandType.StoredProcedure);
+                return id.FirstOrDefault();
             }
 
         }
 
         /// <summary>
-        /// Sửa một bản ghi
+        /// sửa 1 bản ghi
         /// </summary>
-        /// <param name="record">Đối tượng bản ghi cần sửa</param>
-        /// <returns>Số bản ghi bị ảnh hưởng (Sửa thành công thì sẽ trả về 1 bản ghi bị ảnh hưởng)</returns>
-        /// Created by: LHTrung
+        /// <param name="record">Đối tượng bản ghi đã cập nhật lại thông tin</param>
+        /// <returns>Số bản ghi bị ảnh hưởng (sửa thành công thì sẽ trả về 1 bản ghi bị ảnh hưởng)</returns>
+        /// Created by:  LHTRUNG
         public virtual int UpdateOneRecord(T record)
         {
             //lấy kiểu dữ liệu của T ( tên bảng )
@@ -99,26 +90,19 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.BaseDAL
             using (var mySqlConnection = new MySqlConnection(DatabaseContext.ContextString))
             {
                 int rowAffected = mySqlConnection.Execute(storedProcedureName, parameters, commandType: System.Data.CommandType.StoredProcedure);
-                if (rowAffected > 0)
-                {
-                    return rowAffected;
-                }
-                else
-                {
-                    return rowAffected;
-                }
+
+                return rowAffected;
             }
         }
 
 
         /// <summary>
-        /// xóa một bản ghi
+        /// xóa 1 bản ghi
         /// </summary>
         /// <param name="recordID">ID Đối tượng bản ghi cần xóa</param>
-        /// <returns>Số bản ghi bị ảnh hưởng (Thêm mới thành công thì sẽ trả về 1 bản ghi bị ảnh hưởng)</returns>
-        /// Created by: LHTrung
-
-        public virtual Guid DeleteOneRecord(Guid recordID)
+        /// <returns>ID bản ghi bị xóa thành công</returns>
+        /// Created by:  LHTRUNG
+        public virtual int DeleteOneRecord(Guid recordID)
         {
             //lấy kiểu dữ liệu của T ( tên bảng )
             string className = typeof(T).Name;
@@ -134,17 +118,8 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.BaseDAL
             // Thực hiện gọi vào DB để chạy câu lệnh Stored procedure
             using (var mySqlConnection = new MySqlConnection(DatabaseContext.ContextString))
             {
-                var id = mySqlConnection.Query<Guid>(storedProcedureName, parameters, commandType: System.Data.CommandType.StoredProcedure);
-                if (id != null)
-                {
-                    var result = id.FirstOrDefault();
-                    return result;
-                }
-                else
-                {
-                    return Guid.Empty;
-                }
-
+                int rowAffected = mySqlConnection.Execute(storedProcedureName, parameters, commandType: System.Data.CommandType.StoredProcedure);
+                return rowAffected;
             }
 
         }
@@ -152,9 +127,8 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.BaseDAL
         /// <summary>
         /// lấy mã số mới
         /// </summary>
-        /// <returns>Mã số mới</returns>
+        /// <returns>Mã số mới (VD: NV003)</returns>
         /// Created by: LHTrung
-
         public virtual string GetNewCode()
         {
             //lấy kiểu dữ liệu của T ( tên bảng )
@@ -167,13 +141,39 @@ namespace MISA.WEB07.LHTRUNG.GD.DAL.BaseDAL
             using (var mySqlConnection = new MySqlConnection(DatabaseContext.ContextString))
             {
                 var code = mySqlConnection.Query<string>(storedProcedureName, commandType: System.Data.CommandType.StoredProcedure);
-                if (code != null)
+                return code.FirstOrDefault();
+            }
+        }
+
+        /// <summary>
+        /// Kiểm tra mã mới
+        /// </summary>
+        /// <returns>Mã số mới</returns>
+        /// Created by: LHTrung
+        public bool CheckDuplicateCode(string Code)
+        {
+            //lấy kiểu dữ liệu của T ( tên bảng )
+            string className = typeof(T).Name;
+
+            // chuẩn bị tên của Stored procedure cần dùng
+            string storedProcedureName = $"Proc_{className.ToLower()}_CheckDuplicateCode";
+
+            // tham số đầu vào cho Stored procedure 
+            var properties = typeof(T).GetProperties();
+            var parameters = new DynamicParameters();
+            parameters.Add($"@v_{className}Code", Code);
+
+            // Thực hiện gọi vào DB để chạy câu lệnh Stored procedure
+            using (var mySqlConnection = new MySqlConnection(DatabaseContext.ContextString))
+            {
+                var code = mySqlConnection.Query(storedProcedureName, parameters, commandType: System.Data.CommandType.StoredProcedure);
+                if (code.Count() != 0)
                 {
-                    return code.FirstOrDefault();
+                    return true;
                 }
                 else
                 {
-                    return null;
+                    return false;
                 }
             }
         }

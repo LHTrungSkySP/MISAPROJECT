@@ -18,7 +18,7 @@ namespace MISA.WEB07.LHTRUNG.GD.BUS
             _baseDAL = baseDAL;
         }
 
-        public Guid? DeleteOneRecord(Guid recordID)
+        public int DeleteOneRecord(Guid recordID)
         {
             return _baseDAL.DeleteOneRecord(recordID);
         }
@@ -27,7 +27,6 @@ namespace MISA.WEB07.LHTRUNG.GD.BUS
         #endregion
 
         #region Method
-
         /// <summary>
         /// Lấy tất cả bản ghi
         /// </summary>
@@ -69,6 +68,25 @@ namespace MISA.WEB07.LHTRUNG.GD.BUS
 
             return kq;
         }
+        /// <summary>
+        /// Kiểm tra mã mới
+        /// </summary>
+        /// <returns>mã mới có trùng không</returns>
+        /// Created by: LHTrung
+        public bool CheckDuplicateCode(string Code)
+        {
+            return _baseDAL.CheckDuplicateCode(Code);
+        }
+
+        ///// <summary>
+        ///// Kiểm tra dữ liệu đầu vào
+        ///// </summary>
+        ///// <returns>dữ liệu Input có đúng định dạng không</returns>
+        ///// Created by: LHTrung
+        //public virtual ErrorResult Validate(T record)
+        //{
+        //    return HandleError.ValidateEntity(ModelState, HttpContext);;
+        //}
         #endregion
 
     }

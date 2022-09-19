@@ -5,7 +5,7 @@
         /// <summary>
         /// thông tin cá nhân nhân viên
         /// </summary>
-        public Officer? officer { get; set; }
+        public Officer officer { get; set; }
 
         /// <summary>
         /// Thông tin chi tiết về những môn học mà nhân viên dạy

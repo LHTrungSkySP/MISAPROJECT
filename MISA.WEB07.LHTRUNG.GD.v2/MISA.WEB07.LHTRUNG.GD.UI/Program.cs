@@ -1,4 +1,4 @@
-using MISA.WEB07.LHTRUNG.GD.BUS;
+﻿using MISA.WEB07.LHTRUNG.GD.BUS;
 using MISA.WEB07.LHTRUNG.GD.BUS.GroupBUS;
 using MISA.WEB07.LHTRUNG.GD.BUS.Manager.BaseManager;
 using MISA.WEB07.LHTRUNG.GD.BUS.Manager.StorageRoomMNGBUS;
@@ -45,6 +45,12 @@ builder.Services.AddScoped<IStorageRoomManagerDAL, StorageRoomManagerDAL>();
 builder.Services.AddScoped<IStorageRoomMNGBUS, StorageRoomMNGBUS>();
 
 builder.Services.AddControllers();
+
+// Validate entity sử dụng ModelState
+builder.Services.AddControllers().ConfigureApiBehaviorOptions(options =>
+{
+    options.SuppressModelStateInvalidFilter = true;
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

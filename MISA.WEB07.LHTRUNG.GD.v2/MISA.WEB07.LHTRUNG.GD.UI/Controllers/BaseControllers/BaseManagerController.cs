@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MISA.WEB07.LHTRUNG.GD.BUS.Manager.BaseManager;
+using MISA.WEB07.LHTRUNG.GD.UI.Helpers;
 using MySqlConnector;
 
 namespace MISA.WEB07.LHTRUNG.GD.UI.Controllers.BaseControllers
@@ -37,8 +38,7 @@ namespace MISA.WEB07.LHTRUNG.GD.UI.Controllers.BaseControllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
+                return StatusCode(StatusCodes.Status400BadRequest, HandleError.GenerateExceptionResult(ex, HttpContext));
             }
         }
         #endregion
@@ -73,7 +73,7 @@ namespace MISA.WEB07.LHTRUNG.GD.UI.Controllers.BaseControllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
+                return StatusCode(StatusCodes.Status400BadRequest, HandleError.GenerateExceptionResult(ex, HttpContext));
             }
         }
 
@@ -99,7 +99,7 @@ namespace MISA.WEB07.LHTRUNG.GD.UI.Controllers.BaseControllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
+                return StatusCode(StatusCodes.Status400BadRequest, HandleError.GenerateExceptionResult(ex, HttpContext));
             }
         }
     }
