@@ -83,6 +83,6 @@ namespace MISA.WEB07.LHTRUNG.GD.BUS
         /// </summary>
         /// <returns>dữ liệu Input có đúng định dạng không</returns>
         /// Created by: LHTrung
-        public ErrorResult? Validate(Officer officer);
+        public void Validate(Officer officer);
     }
 }

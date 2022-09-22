@@ -1,19 +1,13 @@
-﻿namespace MISA.WEB07.LHTRUNG.GD.DTO.Exceptions
+﻿using MISA.WEB07.LHTRUNG.GD.DTO.EntityUtilities;
+
+namespace MISA.WEB07.LHTRUNG.GD.DTO.Exceptions
 {
     public class ValidateException : Exception
     {
-        string? MsgErrorValidate = null;
-        public ValidateException(string msg)
+        public ErrorResult? errorResult { set; get; }
+        public ValidateException(ErrorResult _errorResult)
         {
-            this.MsgErrorValidate = msg;
-        }
-
-        public override string Message
-        {
-            get
-            {
-                return MsgErrorValidate;
-            }
+            this.errorResult = _errorResult;
         }
     }
 }

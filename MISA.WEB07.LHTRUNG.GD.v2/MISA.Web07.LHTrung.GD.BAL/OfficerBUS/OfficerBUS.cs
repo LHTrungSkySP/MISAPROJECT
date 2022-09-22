@@ -2,6 +2,7 @@
 using MISA.WEB07.LHTRUNG.GD.DTO;
 using MISA.WEB07.LHTRUNG.GD.DTO.EntityUtilities;
 using MISA.WEB07.LHTRUNG.GD.DTO.Enums;
+using MISA.WEB07.LHTRUNG.GD.DTO.Exceptions;
 using MISA.WEB07.LHTRUNG.GD.DTO.Resources;
 using System.Text.RegularExpressions;
 
@@ -82,6 +83,7 @@ namespace MISA.WEB07.LHTRUNG.GD.BUS
         /// 
         public Guid? InsertDetailOfficer(OfficerDetail officerDetail)
         {
+            Validate(officerDetail.officer);
             return _officerDAL.InsertDetailOfficer(officerDetail);
         }
 
@@ -93,6 +95,7 @@ namespace MISA.WEB07.LHTRUNG.GD.BUS
         /// Created by: LHTrung
         public int UpdateOfficerDetail(OfficerDetail officerDetail)
         {
+            Validate(officerDetail.officer);
             return _officerDAL.UpdateOfficerDetail(officerDetail);
         }
 
@@ -101,7 +104,7 @@ namespace MISA.WEB07.LHTRUNG.GD.BUS
         /// </summary>
         /// <returns>dữ liệu Input có đúng định dạng không</returns>
         /// Created by: LHTrung
-        public ErrorResult? Validate(Officer officer)
+        public void Validate(Officer officer)
         {
             var errors = new Dictionary<int, string>();
             // validate mã nhân viên
@@ -111,7 +114,7 @@ namespace MISA.WEB07.LHTRUNG.GD.BUS
             }
             else
             {
-                if (officer.OfficerCode.Length != 5)
+                if (officer.OfficerCode.Length <= 5)
                 {
                     errors.Add((int)ErrorCode.OfficerCodeFail, String.Format(Resource.lengthNotTrue, "Mã nhân viên"));
                 }
@@ -126,7 +129,7 @@ namespace MISA.WEB07.LHTRUNG.GD.BUS
                     {
                         errors.Add((int)ErrorCode.OfficerCodeFail, String.Format(Resource.InfoNotTrue, "Mã nhân viên"));
                     }
-                    else if (int.Parse(matchedNumber.Value) > 999 || int.Parse(matchedNumber.Value) < 0)
+                    else if (int.Parse(matchedNumber.Value) > 10000 || int.Parse(matchedNumber.Value) < 0)
                     {
                         errors.Add((int)ErrorCode.OfficerCodeFail, String.Format(Resource.InfoOutSize, "Mã nhân viên"));
                     }
@@ -168,11 +171,8 @@ namespace MISA.WEB07.LHTRUNG.GD.BUS
             }
             if (errors.Count > 0)
             {
-                return new ErrorResult(ErrorCode.Validate, Resource.valiadate_exp, errors, "", "");
-            }
-            else
-            {
-                return null;
+                var errorResult = new ErrorResult(ErrorCode.Validate, Resource.valiadate_exp, errors, "", "");
+                throw new ValidateException(errorResult);
             }
         }
         /// <summary>

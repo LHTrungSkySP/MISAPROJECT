@@ -2,6 +2,7 @@
 using MISA.WEB07.LHTRUNG.GD.BUS;
 using MISA.WEB07.LHTRUNG.GD.DTO;
 using MISA.WEB07.LHTRUNG.GD.DTO.EntityUtilities;
+using MISA.WEB07.LHTRUNG.GD.DTO.Exceptions;
 using MISA.WEB07.LHTRUNG.GD.UI.Helpers;
 using MySqlConnector;
 using Swashbuckle.AspNetCore.Annotations;
@@ -174,12 +175,11 @@ namespace MISA.WEB07.LHTRUNG.GD.UI.Controllers
                 {
                     return StatusCode(StatusCodes.Status400BadRequest, validateResutl);
                 }
-                validateResutl = _officerBUS.Validate(record);
-                if (validateResutl != null)
-                {
-                    return StatusCode(StatusCodes.Status400BadRequest, validateResutl);
-                }
                 return StatusCode(StatusCodes.Status201Created, _officerBUS.InsertDetailOfficer(officerDetail));
+            }
+            catch (ValidateException ex)
+            {
+                return StatusCode(StatusCodes.Status400BadRequest, ex.errorResult);
             }
             catch (MySqlException mySqlException)
             {
@@ -211,12 +211,11 @@ namespace MISA.WEB07.LHTRUNG.GD.UI.Controllers
                 {
                     return StatusCode(StatusCodes.Status400BadRequest, validateResutl);
                 }
-                validateResutl = _officerBUS.Validate(record);
-                if (validateResutl != null)
-                {
-                    return StatusCode(StatusCodes.Status400BadRequest, validateResutl);
-                }
                 return StatusCode(StatusCodes.Status200OK, _officerBUS.UpdateOfficerDetail(officerDetail));
+            }
+            catch (ValidateException ex)
+            {
+                return StatusCode(StatusCodes.Status400BadRequest, ex.errorResult);
             }
             catch (Exception ex)
             {
@@ -239,11 +238,6 @@ namespace MISA.WEB07.LHTRUNG.GD.UI.Controllers
             try
             {
                 var validateResutl = HandleError.ValidateEntity(ModelState, HttpContext);
-                if (validateResutl != null)
-                {
-                    return StatusCode(StatusCodes.Status400BadRequest, validateResutl);
-                }
-                validateResutl = _officerBUS.Validate(record);
                 if (validateResutl != null)
                 {
                     return StatusCode(StatusCodes.Status400BadRequest, validateResutl);
